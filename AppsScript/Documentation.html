@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fantasy Football Analytics Script Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 5px;
+      border: 1px solid #ddd;
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Fantasy Football Analytics Script</h1>
+
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#constants">Constants</a></li>
+  <li><a href="#functions">Functions</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+<p>
+  This script automates the process of gathering and analyzing fantasy football data.
+  It fetches draft pick data, fantasy points per player, and fantasy points per team,
+  then populates a Google Spreadsheet with this information.
+  It also performs calculations to assess player value and quartile rankings.
+</p>
+
+<h2 id="constants">Constants</h2>
+<p>
+  The script uses several constants to make it easier to update column numbers and headers.
+</p>
+<code>
+const SHEET = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+const HEADERS = ["NO.", "PLAYER", "NFL TEAM", "POSITION", "FANTASY TEAM", "FPTS", "Player Value", "Quartile Ranking"];
+// Column numbers for each header
+const DRAFT_PICK_COL = 1;
+const PLAYER_COL = 2;
+const NFL_TEAM_COL = 3;
+const POSITION_COL = 4;
+const FANTASY_TEAM_COL = 5;
+const FPTS_COL = 6;
+const PLAYER_VALUE_COL = 7;
+const QUARTILE_RANKING_COL = 8;
+</code>
+
+<h2 id="functions">Functions</h2>
+
+<h3>main()</h3>
+<p>
+  This is the main function that orchestrates the entire flow of the script.
+</p>
+
+<h3>retrieveAllData()</h3>
+<p>
+  Fetches all data from stored script properties and parses them into JSON format.
+</p>
+
+<h3>formatAndPopulateHeaders()</h3>
+<p>
+  Sets up the Google Spreadsheet, including setting column widths and headers.
+</p>
+
+<h3>populateData(draftPickData)</h3>
+<p>
+  Populates the spreadsheet with draft pick data.
+</p>
+
+<h3>populateFPTS(fantasyPointsPerPlayerData)</h3>
+<p>
+  Populates the "FPTS" column in the spreadsheet based on the player's name.
+</p>
+
+<h3>populateTeamFPTS(fantasyPointsPerTeamData)</h3>
+<p>
+  Similar to populateFPTS but for teams.
+</p>
+
+<h3>replaceInvalidWithZero()</h3>
+<p>
+  Replaces any invalid or empty values in the "FPTS" column with zero.
+</p>
+
+<h3>calculatePlayerValue()</h3>
+<p>
+  This function calculates a 'value score' for each player based on several factors:
+  their draft pick position, their fantasy points, and their playing position (e.g., Quarterback, Wide Receiver, etc.).
+  The score aims to provide a comprehensive view of the player's value within the fantasy league.
+</p>
+<p>
+  The function first organizes the data into an object where each playing position is a key.
+  For each position, an array of draft picks and fantasy points is maintained.
+  The mean and standard deviation are then calculated for these arrays.
+</p>
+<p>
+  The 'value score' is computed using a Z-score calculation that takes into account the player's draft pick and fantasy points, normalized by their playing position.
+  The Z-score is calculated as follows:
+</p>
+
+<p>
+  Finally, the function writes these value scores back into the Google Spreadsheet, providing a numerical representation of each player's value based on multiple factors.
+</p>
+
+<h3>updateQuartileRankings()</h3>
+<p>
+  Updates the quartile ranking for each player based on their value score.
+</p>
+
+<h3>mean(arr)</h3>
+<p>
+  Calculates the mean of an array.
+</p>
+
+<h3>stdDev(arr, mean)</h3>
+<p>
+  Calculates the standard deviation of an array.
+</p>
+
+</body>
+</html>
