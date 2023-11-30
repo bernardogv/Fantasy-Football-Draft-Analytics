@@ -1,13 +1,6 @@
-Go to the fantasy football page and then go to network,
-then go to Fetch/XHR and make sure you already hit the
-+300 to see all the players and keep hitting more and more - Also you have to do this separately for the defenses
-till you are at the end and then just copy and past the
-FantasyStats_read into the files and then run the code
-Then paste the results into our google sheet
-
-10/17/23
-
-We have two json clean ups one is just the player name and total fantasy points, the other is all the stats
-Right now it just makes js files with all the data in them, we could make it its own folder but thats for another time
-We have a json file for the teams defenses, we just comment out the other section we are not using - so if it's for the
-players we comment out the team file and vice versa
+1. Go to the fantasy football https://fantasydata.com/nfl/fantasy-football-leaders?season=2023&seasontype=1&scope=1&subscope=1&aggregatescope=1&range=3
+    page and then go to network,
+2. then go to Fetch/XHR and make sure you already hit the+300 to see all the players and keep hitting more and more -
+    Also you have to do this separately for the defenses
+        till you are at the end and then just copy and past the FantasyStats_read into the files and then run the code
+3. Then copy and paste into the google scripts and run the scripts

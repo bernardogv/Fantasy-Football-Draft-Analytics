@@ -23,14 +23,14 @@ def read_and_format_json(file_path):
 if __name__ == "__main__":
     # Define the JSON file paths
     json_files = [
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json.json',
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json2.json',
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json3.json',
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json4.json',
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json5.json',
-        # '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json6.json'
+        # '../FantasyJsonData/Fantasy_web_json.json',
+        # '../FantasyJsonData/Fantasy_web_json2.json',
+        # '../FantasyJsonData/Fantasy_web_json3.json',
+        # '../FantasyJsonData/Fantasy_web_json4.json',
+        # '../FantasyJsonData/Fantasy_web_json5.json',
+        # '../FantasyJsonData/Fantasy_web_json6.json'
         # The one underneath is for the team one
-        '/Users/Starfam99/SportsBetting/Fantasy-Football-Draft-Analytics/FantasyJsonData/Fantasy_web_json_team.json'
+        '../FantasyJsonData/Fantasy_web_json_team.json'
     ]
 
     # Initialize an empty list to hold all the formatted data
